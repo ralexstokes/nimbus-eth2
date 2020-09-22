@@ -135,8 +135,9 @@ type
         abbr: "s"
         name: "state-snapshot" }: Option[InputFile]
 
-      stateSnapshotContents* {.hidden.}: ref string
-        # This is ref so we can mutate it (to erase it) after the initial loading.
+      weakSubjectivityCheckpoint* {.
+        desc: "Weak subjectivity checkpoint in the format <block-hash>:<epoch-number>"
+        name "weak-subjectivity-checkpoint" .}: WeakSubjectivityCheckpointStr
 
       runtimePreset* {.hidden.}: RuntimePreset
 
