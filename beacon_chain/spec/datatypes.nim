@@ -460,6 +460,10 @@ type
     stabilitySubnet*: uint64
     stabilitySubnetExpirationEpoch*: Epoch
 
+  SelfSlashingDetection* = object
+    broadcastStartEpoch*: Epoch
+    probeEpoch*: Epoch
+
 func shortValidatorKey*(state: BeaconState, validatorIdx: int): string =
   ($state.validators[validatorIdx].pubkey)[0..7]
 
